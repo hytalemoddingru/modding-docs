@@ -1,0 +1,32 @@
+name: docs-checks
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  mdxlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install mdxlint
+        run: npm install
+      - name: MDX lint
+        run: npx --no-install mdxlint "docs/**/*.mdx"
+      - name: Validate structure
+        run: node scripts/validate-structure.mjs
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link check
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress "docs/**/*.mdx"
+          fail: true

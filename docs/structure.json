@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "default_language": "ru",
+  "default_version": "latest",
+  "path_template": "docs/{lang}/{version}/{slug}.mdx",
+  "title_source": "frontmatter",
+  "frontmatter_required": [
+    "title",
+    "description",
+    "lang",
+    "version",
+    "last_updated"
+  ],
+  "allow_orphan_files": false,
+  "languages": [
+    {"id": "en", "label": "English"},
+    {"id": "ru", "label": "Russian"}
+  ],
+  "versions": [
+    {"id": "latest", "label": "latest", "frozen": false},
+    {"id": "v1.0", "label": "v1.0", "frozen": true}
+  ],
+  "navigation": {
+    "latest": [
+      "intro",
+      "getting-started",
+      "api",
+      "tutorials",
+      "contributing",
+      "faq",
+      "glossary"
+    ],
+    "v1.0": [
+      "intro",
+      "getting-started",
+      "api",
+      "tutorials",
+      "contributing",
+      "faq",
+      "glossary"
+    ]
+  }
+}
