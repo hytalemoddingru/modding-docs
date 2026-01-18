@@ -60,6 +60,25 @@ function readFrontmatter(filePath) {
   return data;
 }
 
+function extractSlugs(nav) {
+  const slugs = [];
+  if (!Array.isArray(nav)) {
+    return slugs;
+  }
+  for (const entry of nav) {
+    if (typeof entry === 'string') {
+      slugs.push(entry);
+      continue;
+    }
+    if (entry && Array.isArray(entry.items)) {
+      slugs.push(...entry.items);
+      continue;
+    }
+    addError('structure.json: invalid navigation entry');
+  }
+  return slugs;
+}
+
 for (const version of versions) {
   if (!navigation[version]) {
     addError(`structure.json: missing navigation for version "${version}"`);
@@ -68,7 +87,7 @@ for (const version of versions) {
 
 for (const lang of languages) {
   for (const version of versions) {
-    const nav = navigation[version] ?? [];
+    const nav = extractSlugs(navigation[version] ?? []);
     const seen = new Set();
 
     for (const slug of nav) {

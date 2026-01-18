@@ -32,6 +32,7 @@ Each page is a `.mdx` file with frontmatter.
 - `title_source` tells the frontend to use frontmatter for titles.
 - `frontmatter_required` defines required keys.
 - `allow_orphan_files` controls whether extra files outside navigation are allowed.
+- `navigation_style: \"grouped\"` allows sidebar grouping with `title` + `items`.
 
 When you add/remove pages or versions, update `structure.json` first.
 

@@ -19,6 +19,7 @@
             packages = [
               pkgs.nodejs_20
               pkgs.lychee
+              pkgs.gnumake
             ];
           };
         });

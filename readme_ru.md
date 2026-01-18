@@ -32,6 +32,7 @@ docs/
 - `title_source` говорит фронтенду брать заголовки из frontmatter.
 - `frontmatter_required` задает обязательные поля.
 - `allow_orphan_files` определяет, разрешены ли файлы вне навигации.
+- `navigation_style: \"grouped\"` позволяет группировать разделы через `title` + `items`.
 
 При добавлении/удалении страниц или версий сначала обновляйте `structure.json`.
 

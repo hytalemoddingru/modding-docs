@@ -1,0 +1,29 @@
+---
+title: "Конфиг и CLI"
+description: "Структура config.json и основные CLI-опции."
+lang: "ru"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Кратко
+Конфигурация сервера и ключевые параметры запуска.
+
+## Config
+- config.json загружается через HytaleServerConfig
+- Поля: serverName, motd, maxPlayers, maxViewRadius
+- modules и modConfig управляют фичами
+
+## Сеть
+- connectionTimeouts управляет таймаутами
+- rateLimitConfig включает лимиты пакетов
+
+## CLI флаги
+- --bind, --transport, --auth-mode
+- --assets, --mods, --universe
+- --validate-assets, --shutdown-after-validate
+- --event-debug, --bare, --disable-sentry
+
+## Плейсхолдеры перевода
+- en: source of truth for this page.
+- ru: keep in sync with English version.

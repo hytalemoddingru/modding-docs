@@ -1,0 +1,29 @@
+---
+title: "Запуск и жизненный цикл"
+description: "Как сервер стартует, инициализирует модули и завершает работу."
+lang: "ru"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Кратко
+Последовательность запуска, события жизненного цикла и shutdown HytaleServer.
+
+## Запуск
+- Main загружает early-плагины и может включить transforming classloader
+- LateMain настраивает логирование, читает CLI и создает HytaleServer
+- HytaleServer.boot поднимает команды, плагины, ассеты и universe
+
+## События
+- LoadAssetEvent валидирует ассеты
+- BootEvent отправляется после готовности universe
+- ShutdownEvent отправляется при завершении
+
+## Shutdown
+- Причины shutdown отслеживаются через ShutdownReason
+- Плагины останавливаются до закрытия сетевых слушателей
+- Конфиг сохраняется по расписанию
+
+## Плейсхолдеры перевода
+- en: source of truth for this page.
+- ru: keep in sync with English version.

@@ -1,0 +1,35 @@
+---
+title: "Обзор ядра"
+description: "Архитектура и карта пакетов HytaleServer."
+lang: "ru"
+version: "v1.0"
+last_updated: "2026-01-18"
+---
+
+## Кратко
+Верхнеуровневая карта ядра HytaleServer и взаимосвязей ключевых подсистем.
+
+> Примечание о версии: это зафиксированный снимок v1.0. Обновления идут в latest.
+
+## Область
+- Основано на декомпиляции HytaleServer JAR
+- Неофициальное описание; детали могут меняться
+- Фокус на стабильных точках входа для моддинга
+
+## Точки входа
+- com.hypixel.hytale.Main
+- com.hypixel.hytale.LateMain
+- com.hypixel.hytale.server.core.HytaleServer
+
+## Карта пакетов
+- server.core (запуск, конфиг, опции)
+- server.core.asset (реестр и загрузка ассетов)
+- server.core.io (транспорт и пакетные хендлеры)
+- server.core.plugin (жизненный цикл плагинов)
+- server.core.universe (миры, datastore, данные игроков)
+- protocol (пакеты, реестр, кодеки)
+- server.npc, server.spawning, server.worldgen (AI и мир)
+
+## Плейсхолдеры перевода
+- en: source of truth for this page.
+- ru: keep in sync with English version.

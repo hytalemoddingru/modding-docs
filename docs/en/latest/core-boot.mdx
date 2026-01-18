@@ -1,0 +1,29 @@
+---
+title: "Boot and Lifecycle"
+description: "How the server boots, initializes modules, and shuts down."
+lang: "en"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Summary
+Boot sequence, lifecycle events, and shutdown flow for HytaleServer.
+
+## Boot sequence
+- Main loads early plugins and may enable a transforming classloader
+- LateMain configures logging, parses CLI options, constructs HytaleServer
+- HytaleServer.boot sets up commands, plugins, assets, and universe
+
+## Lifecycle events
+- LoadAssetEvent validates assets
+- BootEvent is dispatched once the universe is ready
+- ShutdownEvent is dispatched on shutdown
+
+## Shutdown
+- Shutdown reasons tracked via ShutdownReason
+- Plugins are stopped before network listeners close
+- Config is periodically saved on a schedule
+
+## Translation placeholders
+- en: source of truth for this page.
+- ru: keep in sync with English version.

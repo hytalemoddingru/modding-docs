@@ -1,0 +1,29 @@
+---
+title: "Plugins and Classloading"
+description: "Plugin lifecycle, load order, and classloader behavior."
+lang: "en"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Summary
+How plugins are discovered, loaded, and managed by the core server.
+
+## Plugin discovery
+- Core plugins are registered at boot
+- External plugins are loaded from mods/ and optional directories
+- Builtin plugins can be bundled next to the server
+
+## Lifecycle
+- PluginManager runs setup and start phases
+- Load order is resolved from dependencies
+- Plugin state is tracked via PluginState
+
+## Classloading
+- Core plugins use a shared PluginClassLoader
+- External plugins are isolated per path
+- Early plugins can transform classes before boot
+
+## Translation placeholders
+- en: source of truth for this page.
+- ru: keep in sync with English version.

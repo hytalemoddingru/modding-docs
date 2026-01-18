@@ -1,0 +1,39 @@
+---
+title: "Сеть и протокол"
+description: "Транспорт, Netty-пайплайн, фрейминг пакетов и авторизация."
+lang: "ru"
+version: "v1.0"
+last_updated: "2026-01-18"
+---
+
+## Кратко
+Сетевой стек: транспорт, Netty-пайплайн и фрейминг пакетов.
+
+> Примечание о версии: это зафиксированный снимок v1.0. Обновления идут в latest.
+
+## Транспорт
+- --transport выбирает TCP или QUIC (по умолчанию QUIC)
+- QUIC использует mutual TLS и applicationProtocols("hytale/1")
+- TCP поддерживает только insecure авторизацию
+
+## Netty-пайплайн
+- ReadTimeoutHandler
+- PacketDecoder и PacketEncoder
+- RateLimitHandler (опционально)
+- PlayerChannelHandler
+
+## Фрейминг
+- Заголовок: payloadLength (int LE) + packetId (int LE)
+- PacketRegistry сопоставляет ID и max size
+- PacketIO кодирует VarInt-строки, UUID, half-float
+- Zstd: уровень задается через hytale.protocol.compressionLevel
+
+## Поток соединения
+- InitialPacketHandler ожидает Connect/Disconnect
+- Хэш протокола проверяется до авторизации
+- Authenticated режим требует identity token (только QUIC)
+- Insecure/offline использует PasswordPacketHandler
+
+## Плейсхолдеры перевода
+- en: source of truth for this page.
+- ru: keep in sync with English version.

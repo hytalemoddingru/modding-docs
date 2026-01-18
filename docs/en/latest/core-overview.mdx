@@ -1,0 +1,33 @@
+---
+title: "Core Overview"
+description: "High-level architecture and package map of HytaleServer."
+lang: "en"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Summary
+A high-level map of HytaleServer internals and how the main subsystems fit together.
+
+## Scope
+- Based on a decompiled HytaleServer JAR
+- Not an official API; details may change
+- Focus on stable entry points for modders
+
+## Key entry points
+- com.hypixel.hytale.Main
+- com.hypixel.hytale.LateMain
+- com.hypixel.hytale.server.core.HytaleServer
+
+## Package map
+- server.core (bootstrap, config, options)
+- server.core.asset (asset registry and loaders)
+- server.core.io (transport, packet handlers)
+- server.core.plugin (plugin lifecycle, classloaders)
+- server.core.universe (worlds, datastore, player data)
+- protocol (packets, registry, codecs)
+- server.npc, server.spawning, server.worldgen (AI and world systems)
+
+## Translation placeholders
+- en: source of truth for this page.
+- ru: keep in sync with English version.

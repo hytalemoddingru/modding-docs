@@ -1,0 +1,37 @@
+---
+title: "Networking and Protocol"
+description: "Transport, Netty pipeline, packet framing, and auth flow."
+lang: "en"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Summary
+Network stack overview: transport selection, Netty pipeline, and packet framing.
+
+## Transport
+- --transport selects TCP or QUIC (default QUIC)
+- QUIC uses mutual TLS and applicationProtocols("hytale/1")
+- TCP only supports insecure auth
+
+## Netty pipeline
+- ReadTimeoutHandler
+- PacketDecoder and PacketEncoder
+- RateLimitHandler (optional)
+- PlayerChannelHandler
+
+## Packet framing
+- Frame header: payloadLength (int LE) + packetId (int LE)
+- PacketRegistry maps packet IDs and max sizes
+- PacketIO handles VarInt strings, UUIDs, half-floats
+- Zstd compression controlled by hytale.protocol.compressionLevel
+
+## Connection flow
+- InitialPacketHandler expects Connect/Disconnect
+- Protocol hash is validated before auth
+- Authenticated flow requires identity token (QUIC only)
+- Insecure/offline flow uses PasswordPacketHandler
+
+## Translation placeholders
+- en: source of truth for this page.
+- ru: keep in sync with English version.

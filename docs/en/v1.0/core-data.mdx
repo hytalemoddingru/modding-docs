@@ -1,0 +1,30 @@
+---
+title: "Data and Universe"
+description: "Universe lifecycle, worlds, and persistent storage."
+lang: "en"
+version: "v1.0"
+last_updated: "2026-01-18"
+---
+
+## Summary
+World lifecycle and storage systems used by HytaleServer.
+
+> Version note: This is a frozen snapshot for v1.0. Updates go to latest.
+
+## Universe
+- Universe coordinates worlds and readiness
+- Worlds are managed under server.core.universe.world
+
+## Storage
+- DataStoreProvider defaults to disk storage
+- Player storage uses PlayerStorageProvider
+- Storage classes use Zstd for compression
+
+## Related packages
+- server.core.universe.datastore
+- server.core.universe.playerdata
+- storage (IndexedStorageFile)
+
+## Translation placeholders
+- en: source of truth for this page.
+- ru: keep in sync with English version.

@@ -1,0 +1,29 @@
+---
+title: "Config and CLI"
+description: "Server config.json layout and common command-line flags."
+lang: "en"
+version: "latest"
+last_updated: "2026-01-18"
+---
+
+## Summary
+Configuration files and CLI options used by HytaleServer.
+
+## Config file
+- config.json is loaded via HytaleServerConfig
+- Fields include serverName, motd, maxPlayers, maxViewRadius
+- Modules and modConfig control feature toggles
+
+## Connection settings
+- connectionTimeouts controls initial/play timeouts
+- rateLimitConfig enables packet rate limiting
+
+## Common CLI flags
+- --bind, --transport, --auth-mode
+- --assets, --mods, --universe
+- --validate-assets, --shutdown-after-validate
+- --event-debug, --bare, --disable-sentry
+
+## Translation placeholders
+- en: source of truth for this page.
+- ru: keep in sync with English version.

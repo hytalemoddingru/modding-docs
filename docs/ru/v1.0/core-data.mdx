@@ -1,0 +1,30 @@
+---
+title: "Данные и universe"
+description: "Жизненный цикл universe, миры и постоянное хранилище."
+lang: "ru"
+version: "v1.0"
+last_updated: "2026-01-18"
+---
+
+## Кратко
+Жизненный цикл мира и системы хранения HytaleServer.
+
+> Примечание о версии: это зафиксированный снимок v1.0. Обновления идут в latest.
+
+## Universe
+- Universe управляет мирами и готовностью
+- Миры находятся в server.core.universe.world
+
+## Хранилище
+- DataStoreProvider по умолчанию использует диск
+- PlayerStorageProvider отвечает за данные игроков
+- Классы хранения используют Zstd
+
+## Связанные пакеты
+- server.core.universe.datastore
+- server.core.universe.playerdata
+- storage (IndexedStorageFile)
+
+## Плейсхолдеры перевода
+- en: source of truth for this page.
+- ru: keep in sync with English version.
