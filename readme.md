@@ -1,6 +1,6 @@
 # Hytale Modding Docs
 
-[English version] | [Russian version](readme_ru.md)
+[English version] | [[Russian version]](readme_ru.md)
 
 Bilingual (EN/RU) documentation for Hytale modding with versioned snapshots and translation placeholders.
 

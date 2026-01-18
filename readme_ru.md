@@ -1,6 +1,6 @@
 # Документация по моддингу Hytale
 
-[English version](readme.md) | [Russian version]
+[[English version]](readme.md) | [Russian version]
 
 Билингвальная (EN/RU) документация по моддингу Hytale с версионированием и плейсхолдерами для переводов.
 
